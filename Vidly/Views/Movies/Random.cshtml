@@ -1,16 +1,16 @@
 ﻿@model Vidly.ViewModels.RandomMovieViewModel
 @{
     ViewBag.Title = "Random";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";   
 }
 
 @{ 
-    var className = Model.Customers.Count > 5 ? "popular" : null;
+    var className = Model.Customers.Count() > 5 ? "popular" : null;
 }
 
 <h2 class="@className">Shreck~!</h2>
 
-@if (Model.Customers.Count == 0)
+@if (Model.Customers.Count() == 0)
 {
     <text>No one has rented this movie before.</text>
 }
